@@ -28,7 +28,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 //setup a folder for static files likes css,client side js etc
-app.use("/public", express.static(path.join(__dirname, "public")));
+app.use("/public", express.static(path.resolve(__dirname, "public")));
 
 /*create a route for the GET request to the root folder on the server
 The request object holds the GET/POST request from the client
