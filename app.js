@@ -100,7 +100,8 @@ app.post("/send", (req, res) => {
 });
 
 //the port the app will listen to requests
-const port = 3000;
+app.set('port', (process.env.PORT || 3000));
 
-//The app starts a server and listens on the defined port for connections
-app.listen(port, () => console.log("server started..."));
+app.listen(app.get('port'), function(){
+    console.log("Server is started!")
+});
